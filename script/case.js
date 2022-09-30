@@ -27,10 +27,11 @@ function updateCaseCart(isIncrease) {
 // price increase/decrease function 
 
 function updateCasePrice(newcaseQuantityCount) {
-    const totalCasePrice = newcaseQuantityCount * 59;
-    const caseTkElement = document.getElementById('case-tk');
-    caseTkElement.innerText = totalCasePrice;
-
+    if (newcaseQuantityCount > 0) {
+        const totalCasePrice = newcaseQuantityCount * 59;
+        const caseTkElement = document.getElementById('case-tk');
+        caseTkElement.innerText = totalCasePrice;
+    }
 }
 
 // case item start

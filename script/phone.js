@@ -27,10 +27,11 @@ function updatePhoneCart(isIncrease) {
 // price increase/decrease function 
 
 function updatePhonePrice(newPhoneQuantityCount) {
-    const totalPhonePrice = newPhoneQuantityCount * 1299;
-    const phoneTkElement = document.getElementById('phone-tk');
-    phoneTkElement.innerText = totalPhonePrice;
-
+    if (newPhoneQuantityCount > 0) {
+        const totalPhonePrice = newPhoneQuantityCount * 1299;
+        const phoneTkElement = document.getElementById('phone-tk');
+        phoneTkElement.innerText = totalPhonePrice;
+    }
 }
 
 // phone item start
