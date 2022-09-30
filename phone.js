@@ -1,6 +1,6 @@
 // cart increase/decrease function 
 
-function updateCart(isIncrease) {
+function updatePhoneCart(isIncrease) {
     const phoneQuantityCount = document.getElementById('phone-quantity-count');
     const phoneQuantityCountString = phoneQuantityCount.value;
     const phoneQuantityCountNumber = parseInt(phoneQuantityCountString);
@@ -24,6 +24,15 @@ function updateCart(isIncrease) {
 
 }
 
+// price increase/decrease function 
+
+function updatePhonePrice(newPhoneQuantityCount) {
+    const totalPhonePrice = newPhoneQuantityCount * 1299;
+    const phoneTkElement = document.getElementById('phone-tk');
+    phoneTkElement.innerText = totalPhonePrice;
+
+}
+
 // phone item start
 
 
@@ -31,10 +40,8 @@ function updateCart(isIncrease) {
 
 document.getElementById('btn-phone-plus').addEventListener('click', function () {
 
-    const newPhoneQuantityCount = updateCart(true);
-    const totalPhonePrice = newPhoneQuantityCount * 1299;
-    const phoneTkElement = document.getElementById('phone-tk');
-    phoneTkElement.innerText = totalPhonePrice;
+    const newPhoneQuantityCount = updatePhoneCart(true);
+    updatePhonePrice(newPhoneQuantityCount);
 
     //              function use na kore code evabeo kora jay, tate code repeation bare. Ebong dekhteo sundor lage na
 
@@ -45,18 +52,12 @@ document.getElementById('btn-phone-plus').addEventListener('click', function () 
     //     phoneQuantityCount.value = newPhoneQuantityCount;
 })
 
-
-
-
-
 // for phone minus(-) icon 
 
 document.getElementById('btn-phone-minus').addEventListener('click', function () {
 
-    const newPhoneQuantityCount = updateCart(false);
-    const totalPhonePrice = newPhoneQuantityCount * 1299;
-    const phoneTkElement = document.getElementById('phone-tk');
-    phoneTkElement.innerText = totalPhonePrice;
+    const newPhoneQuantityCount = updatePhoneCart(false);
+    updatePhonePrice(newPhoneQuantityCount);
 
     //              eta hocce regular process. too much lenghty. 
 
@@ -73,43 +74,4 @@ document.getElementById('btn-phone-minus').addEventListener('click', function ()
     // }
 })
 
-
-
 // phone item end
-
-
-
-// case item start
-
-// for + icon 
-
-document.getElementById('btn-case-plus').addEventListener('click', function () {
-
-    updateCart(true);
-
-
-
-    // const phoneQuantityCount = document.getElementById('case-quantity-count');
-    // const phoneQuantityCountString = phoneQuantityCount.value;
-    // phoneQuantityCountNumber = parseInt(phoneQuantityCountString);
-    // const newPhoneQuantityCount = phoneQuantityCountNumber + 1;
-    // phoneQuantityCount.value = newPhoneQuantityCount;
-})
-
-// for phone minus(-) icon 
-
-document.getElementById('btn-case-minus').addEventListener('click', function () {
-
-    updateCart(false);
-    // const phoneQuantityCount = document.getElementById('case-quantity-count');
-    // const phoneQuantityCountString = phoneQuantityCount.value;
-    // const phoneQuantityCountNumber = parseInt(phoneQuantityCountString);
-
-    // if (phoneQuantityCountNumber > 1) {
-    //     const newPhoneQuantityCount = phoneQuantityCountNumber - 1;
-    //     phoneQuantityCount.value = newPhoneQuantityCount;
-    // }
-    // else {
-    //     window.alert("You cann't buy a zero quantity item.");
-    // }
-})
