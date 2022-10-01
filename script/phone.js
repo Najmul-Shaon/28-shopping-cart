@@ -43,6 +43,7 @@ document.getElementById('btn-phone-plus').addEventListener('click', function () 
 
     const newPhoneQuantityCount = updatePhoneCart(true);
     updatePhonePrice(newPhoneQuantityCount);
+    subtotalAmount();
 
     //              function use na kore code evabeo kora jay, tate code repeation bare. Ebong dekhteo sundor lage na
 
@@ -59,6 +60,7 @@ document.getElementById('btn-phone-minus').addEventListener('click', function ()
 
     const newPhoneQuantityCount = updatePhoneCart(false);
     updatePhonePrice(newPhoneQuantityCount);
+    subtotalAmount();
 
     //              eta hocce regular process. too much lenghty. 
 

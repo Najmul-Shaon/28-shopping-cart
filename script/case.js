@@ -34,6 +34,8 @@ function updateCasePrice(newcaseQuantityCount) {
     }
 }
 
+
+
 // case item start
 
 
@@ -43,6 +45,10 @@ document.getElementById('btn-case-plus').addEventListener('click', function () {
 
     const newcaseQuantityCount = updateCaseCart(true);
     updateCasePrice(newcaseQuantityCount);
+    subtotalAmount();
+
+
+
 })
 
 // for phone minus(-) icon 
@@ -51,4 +57,8 @@ document.getElementById('btn-case-minus').addEventListener('click', function () 
 
     const newcaseQuantityCount = updateCaseCart(false);
     updateCasePrice(newcaseQuantityCount);
+
+    subtotalAmount();
 })
+
+
