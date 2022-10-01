@@ -8,6 +8,13 @@ function getAmountById(elementId) {
 }
 
 
+// Function set value by ID 
+
+function setValueById(elementId, value) {
+    const subTotalElement = document.getElementById(elementId);
+    subTotalElement.innerText = value;
+}
+
 //  function subtotal amount
 
 function subtotalAmount() {
@@ -15,7 +22,19 @@ function subtotalAmount() {
     const currentPhoneTk = getAmountById('phone-tk');
 
     const currentSubTotal = currentCaseTk + currentPhoneTk;
+    setValueById('sub-total-amount', currentSubTotal);
 
-    const subTotalElement = document.getElementById('sub-total-amount');
-    subTotalElement.innerText = currentSubTotal;
+
+    // tax calculate area
+
+    const taxAmountString = (currentSubTotal * 0.05).toFixed(2);
+    const taxAmount = parseFloat(taxAmountString);
+    setValueById('tax-amount', taxAmount);
+
+    // calculate total 
+
+    const totalAmount = currentSubTotal + taxAmount;
+    setValueById('grand-total-amount', totalAmount);
+
 }
+
